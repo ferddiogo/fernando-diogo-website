@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Profile",
     "title": "Architecture student,",
-    "titleAccent": "obsessed with how cities actually work.",
+    "titleAccent": "at the intersection of design and real estate market.",
     "subtitle": "I combine design practice with analytical reading of the real estate market. The CV summarises my training, academic projects and toolset. Open to opportunities across Portugal and Europe.",
     "cvButton": "Download CV",
     "cvFile": "/cv/fernando-diogo-cv-en.pdf",
@@ -35,10 +35,9 @@
     "eyebrow": "Languages",
     "title": "Communication.",
     "items": [
-      { "name": "Portuguese", "level": "Native",          "proficiency": 100 },
-      { "name": "English",    "level": "Advanced · C1",   "proficiency": 85 },
-      { "name": "Spanish",    "level": "Intermediate · B1","proficiency": 60 },
-      { "name": "French",     "level": "Basic · A2",      "proficiency": 35 }
+      { "name": "Portuguese", "level": "Native",        "proficiency": 100 },
+      { "name": "English",    "level": "Advanced · C1", "proficiency": 85 },
+      { "name": "French",     "level": "Basic · A2",    "proficiency": 35 }
     ]
   },
   "education": {

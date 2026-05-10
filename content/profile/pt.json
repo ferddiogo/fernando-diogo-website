@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Perfil",
     "title": "Estudante de Arquitetura,",
-    "titleAccent": "obcecado por como as cidades funcionam.",
+    "titleAccent": "no cruzamento entre projeto e mercado imobiliário.",
     "subtitle": "Combino prática projetual com leitura analítica do mercado imobiliário. O CV resume a formação, projetos académicos e ferramentas. Aberto a oportunidades em Portugal e na Europa.",
     "cvButton": "Descarregar CV",
     "cvFile": "/cv/fernando-diogo-cv-pt.pdf",
@@ -37,7 +37,6 @@
     "items": [
       { "name": "Português", "level": "Nativo", "proficiency": 100 },
       { "name": "Inglês",    "level": "Avançado · C1",       "proficiency": 85 },
-      { "name": "Espanhol",  "level": "Intermediário · B1",  "proficiency": 60 },
       { "name": "Francês",   "level": "Básico · A2",         "proficiency": 35 }
     ]
   },
