@@ -43,3 +43,6 @@ next-env.d.ts
 
 # Brainstorm artifacts
 .superpowers/
+
+# raw PDF extracts (already copied to final locations)
+public/images/source-pdfs/
