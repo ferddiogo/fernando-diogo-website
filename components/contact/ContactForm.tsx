@@ -41,7 +41,7 @@ export function ContactForm({ dict }: { dict: UIDict }) {
       <div className="bg-bg-elev rounded-2xl p-8 border border-line">
         <p className="font-display text-2xl">{dict.buttons.sent}</p>
         <p className="mt-2 text-ink-muted">
-          {dict.form.name === 'Nome' ? 'Recebi sua mensagem. Retorno em até 24h.' : 'I got your message. Reply within 24 hours.'}
+          {dict.form.name === 'Nome' ? 'Recebi a tua mensagem. Respondo em 24h.' : 'I got your message. Reply within 24 hours.'}
         </p>
       </div>
     );

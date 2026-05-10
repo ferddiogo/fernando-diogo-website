@@ -14,8 +14,8 @@ export function generateStaticParams() {
 }
 
 const HEADINGS = {
-  pt: { title: 'Vamos conversar', desc: 'Conte sobre o projeto. Respondo em até 24h.' },
-  en: { title: "Let's talk", desc: 'Tell me about your project. I reply within 24 hours.' },
+  pt: { title: 'Vamos falar', desc: 'Conta-me sobre a oportunidade ou projeto. Respondo em 24h.' },
+  en: { title: "Let's talk", desc: 'Tell me about the opportunity or project. I reply within 24 hours.' },
 } as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {

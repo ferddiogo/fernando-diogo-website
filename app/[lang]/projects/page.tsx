@@ -14,8 +14,8 @@ export function generateStaticParams() {
 }
 
 const HEADINGS = {
-  pt: { title: 'Trabalhos', desc: 'Da arquitetura ao painel: o conjunto de projetos que define a prática.' },
-  en: { title: 'Work', desc: 'From architecture to dashboard: the body of work that defines the practice.' },
+  pt: { title: 'Trabalhos', desc: 'Projetos académicos e pessoais — entre arquitetura e leitura do mercado imobiliário.' },
+  en: { title: 'Work', desc: 'Academic and personal projects — between architecture and real estate market reading.' },
 } as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {

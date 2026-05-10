@@ -14,7 +14,7 @@ const STRINGS = {
   pt: {
     eyebrow: 'Dashboard Interativo',
     placeholderTitle: 'Dashboard interativo em breve',
-    placeholderBody: 'Painel Power BI publicado abaixo. Quando o link estiver disponível, ele substitui a imagem com filtros, slicers e drill-down totalmente funcionais.',
+    placeholderBody: 'Painel Power BI a ser publicado em breve. Assim que o link estiver disponível, vai substituir esta imagem com filtros, slicers e drill-down totalmente funcionais.',
     iframeLabel: 'Power BI dashboard',
   },
   en: {

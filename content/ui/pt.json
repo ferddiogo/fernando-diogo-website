@@ -3,16 +3,16 @@
     "home": "Início",
     "projects": "Projetos",
     "hobbies": "Hobbies",
-    "contact": "Contato"
+    "contact": "Contacto"
   },
   "buttons": {
-    "learnMore": "Saiba mais",
-    "letsTalk": "Vamos conversar",
+    "learnMore": "Saber mais",
+    "letsTalk": "Vamos falar",
     "viewProject": "Ver projeto",
     "viewAll": "Ver todos",
     "backToProjects": "Voltar aos projetos",
     "send": "Enviar mensagem",
-    "sending": "Enviando...",
+    "sending": "A enviar...",
     "sent": "Mensagem enviada!"
   },
   "form": {
@@ -26,7 +26,7 @@
       "other": "Outro"
     },
     "message": "Mensagem",
-    "errorGeneric": "Algo deu errado. Tente novamente ou envie email diretamente.",
+    "errorGeneric": "Algo correu mal. Tenta novamente ou envia email diretamente.",
     "errorRequired": "Campo obrigatório"
   },
   "labels": {
@@ -34,9 +34,9 @@
     "location": "Localização",
     "category": "Categoria",
     "client": "Cliente",
-    "status": "Status",
+    "status": "Estado",
     "area": "Área",
-    "floors": "Pavimentos",
+    "floors": "Pisos",
     "units": "Unidades",
     "tags": "Tags",
     "next": "Próximo",
