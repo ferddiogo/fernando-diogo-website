@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "headline": "Spaces that think.",
+    "sublineLine1": "Cities that speak.",
+    "subline": "Architecture and market intelligence for projects that respond to the territory with data, intuition, and care.",
+    "cta": "Let's talk",
+    "featuredProjectChip": {
+      "title": "Helix Tower",
+      "subtitle": "Parametric vertical residential"
+    }
+  },
+  "stats": [
+    { "value": "120", "label": "Delivered projects" },
+    { "value": "8",   "label": "Years of practice" },
+    { "value": "32",  "label": "Market dashboards" },
+    { "value": "6",   "label": "Zones mapped (SP)" }
+  ],
+  "dualSpecialty": {
+    "title": "Two languages, one gaze.",
+    "left": {
+      "kicker": "Architecture",
+      "title": "Projects that respond to the territory",
+      "body": "From concept to construction detail: feasibility studies, executive design, parametric façades, retrofit and interiors.",
+      "cta": "See architecture projects"
+    },
+    "right": {
+      "kicker": "Real Estate Intelligence",
+      "title": "Data that becomes decision",
+      "body": "Power BI dashboards, densification studies, absorption and sales velocity analysis, demographic and competitive mapping.",
+      "cta": "See market studies"
+    }
+  },
+  "featured": {
+    "eyebrow": "Selected",
+    "title": "Recent work",
+    "description": "A curation of what best represents both sides of the practice."
+  },
+  "dataInsights": {
+    "eyebrow": "Market Intelligence",
+    "title": "From floor plan to dashboard.",
+    "body": "Every launch is also a data point. I map what's being built in São José dos Campos and São Paulo — by zone, bedrooms, area, and builder — and turn that into decisions for developers, funds, and architects.",
+    "image": "/images/data-insights/dashboard-preview.jpg",
+    "cta": "See full studies"
+  },
+  "about": {
+    "eyebrow": "Who",
+    "title": "Fernando Diogo",
+    "body": "Architect and real estate market analyst working at the intersection of architectural design and city-reading through data. He operates at the frontier of built form and urban dynamics — where the building must respond to the territory.",
+    "image": "/images/about/portrait.jpg"
+  },
+  "testimonials": [
+    {
+      "quote": "The rare combination of architectural sensibility and analytical market reading.",
+      "author": "Maria Santos",
+      "role": "Real Estate Development Director"
+    }
+  ],
+  "contactCta": {
+    "title": "Let's build the next project.",
+    "subtitle": "Architecture, market consulting, or both — write to me.",
+    "cta": "Start a conversation"
+  },
+  "social": {
+    "email": "fernando@fernandodiogo.com",
+    "whatsapp": "+55 11 90000-0000",
+    "linkedin": "https://linkedin.com/in/fernandodiogo",
+    "instagram": "https://instagram.com/fernandodiogo"
+  }
+}

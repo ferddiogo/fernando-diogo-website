@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "headline": "Espaços que pensam.",
+    "sublineLine1": "Cidades que falam.",
+    "subline": "Arquitetura e inteligência de mercado para projetos que respondem ao território com dados, intuição e cuidado.",
+    "cta": "Vamos conversar",
+    "featuredProjectChip": {
+      "title": "Torre Hélix",
+      "subtitle": "Residencial vertical paramétrico"
+    }
+  },
+  "stats": [
+    { "value": "120", "label": "Projetos entregues" },
+    { "value": "8",   "label": "Anos de prática" },
+    { "value": "32",  "label": "Dashboards de mercado" },
+    { "value": "6",   "label": "Zonas mapeadas (SP)" }
+  ],
+  "dualSpecialty": {
+    "title": "Duas linguagens, um olhar.",
+    "left": {
+      "kicker": "Arquitetura",
+      "title": "Projetos que respondem ao território",
+      "body": "Do conceito ao detalhe construtivo: estudos de viabilidade, projeto executivo, fachadas paramétricas, retrofit e interiores.",
+      "cta": "Ver projetos de arquitetura"
+    },
+    "right": {
+      "kicker": "Inteligência Imobiliária",
+      "title": "Dados que viram decisão",
+      "body": "Dashboards Power BI, estudos de densificação, análise de absorção e velocidade de vendas, mapeamento demográfico e de concorrência.",
+      "cta": "Ver estudos de mercado"
+    }
+  },
+  "featured": {
+    "eyebrow": "Selecionados",
+    "title": "Trabalhos recentes",
+    "description": "Uma curadoria do que melhor representa as duas vertentes."
+  },
+  "dataInsights": {
+    "eyebrow": "Inteligência de Mercado",
+    "title": "Da planta ao painel.",
+    "body": "Cada lançamento é também um dado. Eu mapeio o que se constrói em São José dos Campos e São Paulo — por zona, dormitório, área e construtora — e transformo isso em decisão para incorporadores, fundos e arquitetos.",
+    "image": "/images/data-insights/dashboard-preview.jpg",
+    "cta": "Ver estudos completos"
+  },
+  "about": {
+    "eyebrow": "Quem é",
+    "title": "Fernando Diogo",
+    "body": "Arquiteto e analista de mercado imobiliário com prática entre projeto arquitetônico e leitura de cidade via dados. Trabalha na fronteira entre forma construída e dinâmica urbana — onde o edifício precisa responder ao território.",
+    "image": "/images/about/portrait.jpg"
+  },
+  "testimonials": [
+    {
+      "quote": "A combinação rara de sensibilidade arquitetônica com leitura analítica do mercado.",
+      "author": "Maria Santos",
+      "role": "Diretora de Incorporação"
+    }
+  ],
+  "contactCta": {
+    "title": "Vamos construir o próximo projeto.",
+    "subtitle": "Arquitetura, consultoria de mercado, ou as duas — me escreva.",
+    "cta": "Iniciar conversa"
+  },
+  "social": {
+    "email": "fernando@fernandodiogo.com",
+    "whatsapp": "+55 11 90000-0000",
+    "linkedin": "https://linkedin.com/in/fernandodiogo",
+    "instagram": "https://instagram.com/fernandodiogo"
+  }
+}
