@@ -66,24 +66,15 @@ Build a bilingual (PT/EN) personal portfolio website for **Fernando Diogo**, an 
 ```
 [lang=pt]                    [lang=en]
 /pt                       ↔  /en                          (landing)
-/pt/projetos              ↔  /en/projects                 (project list)
-/pt/projetos/[slug]       ↔  /en/projects/[slug]          (project detail)
+/pt/projects              ↔  /en/projects                 (project list)
+/pt/projects/[slug]       ↔  /en/projects/[slug]          (project detail)
 /pt/hobbies               ↔  /en/hobbies                  (hobbies grid)
-/pt/contato               ↔  /en/contact                  (contact form)
+/pt/contact               ↔  /en/contact                  (contact form)
 ```
 
 Root `/` redirects to `/pt` (default locale).
 
-The route slug ("projetos" vs "projects") differs by language. This is implemented via a **route-segment dictionary** in `lib/i18n/routes.ts`:
-
-```ts
-export const ROUTES = {
-  pt: { projects: 'projetos', hobbies: 'hobbies', contact: 'contato' },
-  en: { projects: 'projects', hobbies: 'hobbies', contact: 'contact' },
-}
-```
-
-The `<LangToggle />` component uses this dictionary to compute the equivalent path in the other language so a user on `/pt/projetos/torre-helix` switches to `/en/projects/torre-helix`.
+**Uniform path segments across both locales** (`projects`, `hobbies`, `contact`). Localization happens in the **rendered labels** (nav text, headings, body copy), not in URL slugs. Rationale: avoids file-tree duplication, keeps `<LangToggle />` trivial (swap `/pt/...` ↔ `/en/...`), and Google relies on `<html lang>` + `hreflang` annotations for indexing — translated URL slugs offer marginal SEO benefit at significant maintenance cost. The `EDITING.md` guide documents how an advanced editor could later add translated slugs via Next.js rewrites if desired.
 
 ## 5. Folder structure
 
@@ -93,14 +84,10 @@ fernando-website/
 │   ├── [lang]/
 │   │   ├── layout.tsx                     ← html lang, fonts, header/footer
 │   │   ├── page.tsx                       ← landing
-│   │   ├── projetos/                      ← PT slug
+│   │   ├── projects/
 │   │   │   ├── page.tsx                   ← list
-│   │   │   └── [slug]/page.tsx            ← detail (re-exports en route logic)
-│   │   ├── projects/                      ← EN slug
-│   │   │   ├── page.tsx
-│   │   │   └── [slug]/page.tsx
+│   │   │   └── [slug]/page.tsx            ← detail
 │   │   ├── hobbies/page.tsx
-│   │   ├── contato/page.tsx
 │   │   ├── contact/page.tsx
 │   │   └── not-found.tsx
 │   ├── layout.tsx                         ← root layout, minimal
@@ -164,8 +151,7 @@ fernando-website/
 │
 ├── lib/
 │   ├── i18n/
-│   │   ├── config.ts                      ← LOCALES, DEFAULT_LOCALE
-│   │   ├── routes.ts                      ← route-segment dictionary
+│   │   ├── config.ts                      ← LOCALES, DEFAULT_LOCALE, NAV_PATHS
 │   │   ├── dictionary.ts                  ← getDictionary(lang) loader
 │   │   └── alternates.ts                  ← compute hreflang alternates
 │   └── content/
@@ -301,13 +287,13 @@ Sections, top to bottom:
 8. **Contact CTA** — black band with "Vamos construir juntos" + button
 9. **Footer**
 
-### 7.2 Projects list (`app/[lang]/{projetos|projects}/page.tsx`)
+### 7.2 Projects list (`app/[lang]/projects/page.tsx`)
 
 - Filter chips at top: `Todos / Arquitetura / Inteligência Imobiliária / Estudos Urbanos / Interiores`
 - Grid (2 columns desktop, 1 mobile) of `ProjectCard`
 - Order driven by `_index.json`
 
-### 7.3 Project detail (`app/[lang]/{projetos|projects}/[slug]/page.tsx`)
+### 7.3 Project detail (`app/[lang]/projects/[slug]/page.tsx`)
 
 - `generateStaticParams` returns slugs from `_index.all`
 - `dynamicParams = false` — slugs not in the index 404
@@ -319,7 +305,7 @@ For `category: "data-intelligence"` projects, render the `DataProjectLayout` var
 
 Editorial bento-style grid of HobbyCard components reading from `content/hobbies/{lang}.json`.
 
-### 7.5 Contact (`app/[lang]/{contato|contact}/page.tsx`)
+### 7.5 Contact (`app/[lang]/contact/page.tsx`)
 
 Two-column: contact info (email, WhatsApp, LinkedIn, Instagram — all configurable in `content/site/{lang}.json`) on the left; form on the right submitting to a Formspree endpoint configured via `NEXT_PUBLIC_FORMSPREE_ID` env var.
 
@@ -330,7 +316,7 @@ Two-column: contact info (email, WhatsApp, LinkedIn, Instagram — all configura
 - All page components accept `params` (a Promise per Next 16) and `await` it before rendering.
 - `<html lang={lang}>` is set in the root layout for accessibility/SEO.
 - Each page exports `generateMetadata` with `alternates.languages` populated for hreflang.
-- The two route trees (`projetos/` and `projects/`) each contain a thin file that imports a shared `ProjectListPage` / `ProjectDetailPage` component from `components/projects/` — no logic duplication.
+- Page files render via shared components from `components/projects/` (`ProjectListPage`, `ProjectDetailPage`) parametrized on `lang`.
 - Middleware (`middleware.ts`) handles `/` → `/pt` (or `/en` if `Accept-Language` prefers English).
 
 ## 9. Animations
