@@ -3,7 +3,7 @@ import { LOCALES } from '@/lib/i18n/config';
 import { getProjectSlugs } from '@/lib/content/projects';
 
 const BASE = 'https://fernandodiogo.com';
-const STATIC_PATHS = ['', '/projects', '/hobbies', '/contact'];
+const STATIC_PATHS = ['', '/projects', '/profile', '/hobbies', '/contact'];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugs = await getProjectSlugs();

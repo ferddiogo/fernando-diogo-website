@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { LOCALES, DEFAULT_LOCALE, type Locale } from '@/lib/i18n/config';
 
-// Kept exported for tests, no longer used by the middleware (PT is now always
-// the entry point). To re-enable Accept-Language detection, swap the call in
-// `middleware()` below to `resolveRedirectLocale(request.headers.get(...))`.
+// Kept exported for tests, no longer used by `proxy` (PT is now always the
+// entry point). To re-enable Accept-Language detection, swap the call in
+// `proxy()` below to `resolveRedirectLocale(request.headers.get(...))`.
 export function resolveRedirectLocale(acceptLanguage: string): Locale {
   if (!acceptLanguage) return DEFAULT_LOCALE;
   const ranked = acceptLanguage
@@ -19,7 +19,7 @@ export function resolveRedirectLocale(acceptLanguage: string): Locale {
   return DEFAULT_LOCALE;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   if (pathname === '/' || pathname === '') {
     const url = request.nextUrl.clone();

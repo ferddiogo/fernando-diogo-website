@@ -5,6 +5,7 @@ export const DEFAULT_LOCALE: Locale = 'pt';
 export const NAV_PATHS = {
   home: '',
   projects: 'projects',
+  profile: 'profile',
   hobbies: 'hobbies',
   contact: 'contact',
 } as const;

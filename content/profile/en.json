@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "eyebrow": "Profile",
+    "title": "Architecture student,",
+    "titleAccent": "obsessed with how cities actually work.",
+    "subtitle": "I combine design practice with analytical reading of the real estate market. The CV summarises my training, academic projects and toolset. Open to opportunities across Portugal and Europe.",
+    "cvButton": "Download CV",
+    "cvFile": "/cv/fernando-diogo-cv-en.pdf",
+    "cvFilename": "fernando-diogo-cv-en.pdf"
+  },
+  "skills": {
+    "eyebrow": "Capabilities",
+    "title": "Tools and methods.",
+    "description": "The software, methods and disciplines I use daily, organized by area.",
+    "categories": [
+      {
+        "title": "Architecture & Design",
+        "items": ["Revit (BIM)", "AutoCAD", "SketchUp", "Rhinoceros + Grasshopper", "ArchiCAD", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"]
+      },
+      {
+        "title": "3D Visualization",
+        "items": ["Lumion", "V-Ray", "Twinmotion", "Enscape", "D5 Render"]
+      },
+      {
+        "title": "Data & Intelligence",
+        "items": ["Power BI", "Advanced Excel", "QGIS", "Basic SQL", "Parametric modeling", "Spatial analysis (isochrones, heatmaps)"]
+      },
+      {
+        "title": "Methods",
+        "items": ["Feasibility studies", "Real estate market analysis", "Data visualization", "Sustainability & energy efficiency", "Technical documentation", "Client presentation"]
+      }
+    ]
+  },
+  "languages": {
+    "eyebrow": "Languages",
+    "title": "Communication.",
+    "items": [
+      { "name": "Portuguese", "level": "Native",          "proficiency": 100 },
+      { "name": "English",    "level": "Advanced · C1",   "proficiency": 85 },
+      { "name": "Spanish",    "level": "Intermediate · B1","proficiency": 60 },
+      { "name": "French",     "level": "Basic · A2",      "proficiency": 35 }
+    ]
+  },
+  "education": {
+    "eyebrow": "Path",
+    "title": "Training and studies.",
+    "items": [
+      {
+        "period": "2022 — present",
+        "title": "Bachelor in Architecture",
+        "institution": "Faculty of Architecture",
+        "description": "In training. Focus on urban design and construction technology."
+      },
+      {
+        "period": "2024",
+        "title": "Power BI for Real Estate Analysis",
+        "institution": "Intensive course",
+        "description": "Data modeling, DAX, advanced visualization for vertical residential markets."
+      },
+      {
+        "period": "2023",
+        "title": "Parametric Modeling with Grasshopper",
+        "institution": "Workshop",
+        "description": "Responsive façade generation, solar optimization and simulation."
+      },
+      {
+        "period": "2021",
+        "title": "Secondary Education",
+        "institution": "Sciences & Technologies track",
+        "description": "Foundation in mathematics, physics and drawing."
+      }
+    ]
+  },
+  "closingCta": {
+    "title": "Open to opportunities.",
+    "subtitle": "Internships, freelances, academic projects or collaborations — get in touch or download the CV.",
+    "primaryCta": "Send a message",
+    "secondaryCta": "Download CV"
+  }
+}

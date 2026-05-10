@@ -15,6 +15,7 @@ Portfolio bilingue (PT/EN) do Fernando Diogo — estudante de Arquitetura com fo
    - [Editar um projeto existente](#editar-um-projeto-existente)
    - [Adicionar um projeto novo](#adicionar-um-projeto-novo)
    - [Reordenar ou esconder projetos](#reordenar-ou-esconder-projetos)
+   - [Editar a página Perfil (skills + CV)](#editar-a-página-perfil-skills--cv)
    - [Editar hobbies](#editar-hobbies)
    - [Mudar email e redes sociais](#mudar-email-e-redes-sociais)
    - [Mudar a paleta de cores](#mudar-a-paleta-de-cores)
@@ -243,6 +244,73 @@ O ficheiro `content/projects/_index.json` controla **ordem** e **visibilidade**:
 - **Para esconder um projeto temporariamente:** remove o slug de `all` (mantém os ficheiros, simplesmente não aparece)
 - **Para apagar definitivamente:** remove de `all`/`featured` e apaga a pasta `content/projects/<slug>/`
 
+### Editar a página Perfil (skills + CV)
+
+A página `/pt/profile` (e `/en/profile`) mostra capacidades, línguas, formação e tem o botão de download do CV. Tudo é editável a partir de dois sítios:
+
+**1. Conteúdo (textos, capacidades, línguas, formação):** `content/profile/pt.json` e `content/profile/en.json`.
+
+Estrutura do ficheiro:
+
+```json
+{
+  "hero": {
+    "eyebrow": "Perfil",
+    "title": "Estudante de Arquitetura,",
+    "titleAccent": "obcecado por como as cidades funcionam.",
+    "subtitle": "...",
+    "cvButton": "Descarregar CV",
+    "cvFile": "/cv/fernando-diogo-cv-pt.pdf",
+    "cvFilename": "fernando-diogo-cv-pt.pdf"
+  },
+  "skills": {
+    "categories": [
+      {
+        "title": "Arquitetura & Design",
+        "items": ["Revit (BIM)", "AutoCAD", "SketchUp", "..."]
+      },
+      ...
+    ]
+  },
+  "languages": {
+    "items": [
+      { "name": "Português", "level": "Nativo", "proficiency": 100 },
+      { "name": "Inglês",    "level": "Avançado · C1", "proficiency": 85 },
+      ...
+    ]
+  },
+  "education": {
+    "items": [
+      {
+        "period": "2022 — atual",
+        "title": "Licenciatura em Arquitetura",
+        "institution": "Faculdade de Arquitetura",
+        "description": "Em formação. Foco em projeto urbano e tecnologia construtiva."
+      },
+      ...
+    ]
+  }
+}
+```
+
+- **Adicionar uma capacidade nova:** adiciona uma string ao array `items` da categoria certa.
+- **Adicionar uma categoria nova:** adiciona um objeto novo ao array `skills.categories` com `title` e `items`. Usa o mesmo padrão de ícone do site (canto preenchido).
+- **Mudar o nível de uma língua:** altera `proficiency` (0-100, controla a barra) e `level` (texto que aparece à direita).
+- **Adicionar uma entrada de formação:** adiciona um objeto ao array `education.items` com `period`, `title`, `institution` e `description`. A ordem do array é a ordem na timeline (mais recente em cima).
+
+**2. O ficheiro do CV:** `public/cv/fernando-diogo-cv-pt.pdf` e `public/cv/fernando-diogo-cv-en.pdf`.
+
+Para substituir pelo CV real:
+
+1. Exporta o teu CV para PDF (PT e EN, se quiseres ambas as versões)
+2. Renomeia para `fernando-diogo-cv-pt.pdf` e `fernando-diogo-cv-en.pdf`
+3. Substitui os ficheiros existentes em `public/cv/` (mantém os mesmos nomes)
+4. Faz commit e push
+
+> Se preferires usar nomes diferentes, edita os campos `hero.cvFile` e `hero.cvFilename` em `content/profile/pt.json` (e `en.json`) para apontar para o novo ficheiro.
+
+Os ficheiros que estão lá agora são placeholders — vão dar download de um PDF de uma página a dizer "Substitui este ficheiro pelo CV real" até serem substituídos.
+
 ### Editar hobbies
 
 Edita `content/hobbies/pt.json` (e `en.json` para a versão inglesa). Cada hobby é um objeto com `slug`, `title`, `description` e `image`. Os slugs têm de ser iguais nos dois idiomas.
@@ -389,6 +457,7 @@ Arch-website/
 │   ├── [lang]/             ← Todas as rotas: /pt/* e /en/*
 │   │   ├── page.tsx        ← Página inicial
 │   │   ├── projects/       ← Lista e detalhe de projetos
+│   │   ├── profile/        ← Página de perfil (skills + CV)
 │   │   ├── hobbies/        ← Página de hobbies
 │   │   ├── contact/        ← Página de contacto
 │   │   └── layout.tsx      ← Header + Footer comuns
@@ -399,6 +468,7 @@ Arch-website/
 ├── content/                ← TODO o conteúdo editável vive aqui
 │   ├── ui/{pt,en}.json     ← Strings da interface (menu, botões, formulário)
 │   ├── site/{pt,en}.json   ← Conteúdo da página inicial
+│   ├── profile/{pt,en}.json← Skills, línguas, formação, CTA do CV
 │   ├── hobbies/{pt,en}.json← Lista de hobbies
 │   └── projects/
 │       ├── _index.json     ← Ordem e visibilidade dos projetos
@@ -412,19 +482,22 @@ Arch-website/
 │   ├── layout/             ← Header, Footer, LangToggle
 │   ├── home/               ← Secções da página inicial
 │   ├── projects/           ← Cartões, hero, galeria, embed dashboard
+│   ├── profile/            ← Hero, SkillsGrid, Languages, Education
 │   ├── hobbies/            ← Cartões de hobbies
 │   ├── contact/            ← Formulário
 │   └── ui/                 ← Primitivas (Button, Container, etc.)
 │
 ├── lib/
 │   ├── i18n/               ← Configuração de idiomas
-│   ├── content/            ← Carregadores de conteúdo (projects, site, hobbies)
+│   ├── content/            ← Carregadores de conteúdo (projects, site, profile, hobbies)
 │   ├── fonts.ts            ← Configuração das fontes
 │   └── cn.ts               ← Helper para classes condicionais
 │
-├── public/images/          ← Todas as imagens
+├── public/
+│   ├── images/             ← Todas as imagens
+│   └── cv/                 ← PDFs do CV (PT e EN)
 ├── styles/tokens.css       ← Paleta de cores (CSS variables)
-├── middleware.ts           ← Redireciona / para /pt
+├── proxy.ts                ← Redireciona / para /pt (Next.js 16 substitui middleware)
 └── docs/                   ← Spec, plano e documentação adicional
 ```
 
@@ -442,7 +515,7 @@ npm run lint     # verificar problemas no código
 
 - O segmento `[lang]` na URL controla o idioma (`/pt/...` ou `/en/...`)
 - O ficheiro `lib/i18n/config.ts` define os idiomas suportados (`LOCALES = ['pt', 'en']`)
-- O middleware (`middleware.ts`) redireciona automaticamente `/` para `/pt`
+- O proxy (`proxy.ts`) redireciona automaticamente `/` para `/pt`
 - Todas as strings traduzíveis vivem em `content/ui/{pt,en}.json` e `content/site/{pt,en}.json`
 
 ### SEO

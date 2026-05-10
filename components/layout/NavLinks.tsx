@@ -7,7 +7,7 @@ import { cn } from '@/lib/cn';
 
 type NavLabels = Record<NavKey, string>;
 
-const NAV_KEYS: NavKey[] = ['home', 'projects', 'hobbies'];
+const NAV_KEYS: NavKey[] = ['home', 'projects', 'profile', 'hobbies'];
 
 export function NavLinks({ lang, labels }: { lang: Locale; labels: NavLabels }) {
   const pathname = usePathname() ?? '';

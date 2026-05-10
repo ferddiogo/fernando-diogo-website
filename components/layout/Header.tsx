@@ -21,6 +21,7 @@ export async function Header({ lang }: { lang: Locale }) {
             labels={{
               home: dict.nav.home,
               projects: dict.nav.projects,
+              profile: dict.nav.profile,
               hobbies: dict.nav.hobbies,
               contact: dict.nav.contact,
             }}

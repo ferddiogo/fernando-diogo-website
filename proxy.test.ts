@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { resolveRedirectLocale } from './middleware';
+import { resolveRedirectLocale } from './proxy';
 
 describe('resolveRedirectLocale', () => {
   it('returns en when Accept-Language prefers English', () => {
