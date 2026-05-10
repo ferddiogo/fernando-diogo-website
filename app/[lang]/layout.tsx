@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { LOCALES, isLocale } from '@/lib/i18n/config';
+import { Header } from '@/components/layout/Header';
 
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
@@ -14,7 +15,12 @@ export default async function LangLayout({
 }) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  return <>{children}</>;
+  return (
+    <>
+      <Header lang={lang} />
+      {children}
+    </>
+  );
 }
 
 export const dynamicParams = false;
