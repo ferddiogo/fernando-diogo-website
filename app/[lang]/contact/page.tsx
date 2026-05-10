@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -6,6 +7,7 @@ import { isLocale, LOCALES } from '@/lib/i18n/config';
 import { getDictionary } from '@/lib/i18n/dictionary';
 import { getSiteContent } from '@/lib/content/site';
 import { Mail, Phone, ExternalLink } from 'lucide-react';
+import { buildAlternates } from '@/lib/i18n/alternates';
 
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
@@ -15,6 +17,17 @@ const HEADINGS = {
   pt: { title: 'Vamos conversar', desc: 'Conte sobre o projeto. Respondo em até 24h.' },
   en: { title: "Let's talk", desc: 'Tell me about your project. I reply within 24 hours.' },
 } as const;
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLocale(lang)) return {};
+  const h = HEADINGS[lang];
+  return {
+    title: `${h.title} — Fernando Diogo`,
+    description: h.desc,
+    alternates: buildAlternates('/contact', lang),
+  };
+}
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

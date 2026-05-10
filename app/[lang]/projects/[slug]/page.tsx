@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { ProjectHero } from '@/components/projects/ProjectHero';
@@ -8,6 +9,7 @@ import { DashboardEmbed } from '@/components/projects/DashboardEmbed';
 import { LOCALES, isLocale, type Locale } from '@/lib/i18n/config';
 import { getProjectMeta, getProjectSlugs } from '@/lib/content/projects';
 import { getDictionary } from '@/lib/i18n/dictionary';
+import { buildAlternates } from '@/lib/i18n/alternates';
 
 export async function generateStaticParams() {
   const slugs = await getProjectSlugs();
@@ -15,6 +17,24 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = false;
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
+  const { lang, slug } = await params;
+  if (!isLocale(lang)) return {};
+  const meta = await getProjectMeta(slug).catch(() => null);
+  if (!meta) return {};
+  return {
+    title: `${meta.title[lang as Locale]} — Fernando Diogo`,
+    description: meta.summary[lang as Locale],
+    alternates: buildAlternates(`/projects/${slug}`, lang),
+    openGraph: {
+      title: meta.title[lang as Locale],
+      description: meta.summary[lang as Locale],
+      images: [meta.cover],
+      type: 'article',
+    },
+  };
+}
 
 export default async function ProjectPage({
   params,

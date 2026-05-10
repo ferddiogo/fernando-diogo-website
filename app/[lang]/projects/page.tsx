@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { isLocale, type Locale } from '@/lib/i18n/config';
 import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
@@ -6,6 +7,7 @@ import { ProjectFilter } from '@/components/projects/ProjectFilter';
 import { getAllProjects, type ProjectCategory } from '@/lib/content/projects';
 import { getDictionary } from '@/lib/i18n/dictionary';
 import { LOCALES } from '@/lib/i18n/config';
+import { buildAlternates } from '@/lib/i18n/alternates';
 
 export function generateStaticParams() {
   return LOCALES.map((lang) => ({ lang }));
@@ -15,6 +17,17 @@ const HEADINGS = {
   pt: { title: 'Trabalhos', desc: 'Da arquitetura ao painel: o conjunto de projetos que define a prática.' },
   en: { title: 'Work', desc: 'From architecture to dashboard: the body of work that defines the practice.' },
 } as const;
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLocale(lang)) return {};
+  const heading = HEADINGS[lang as Locale];
+  return {
+    title: `${heading.title} — Fernando Diogo`,
+    description: heading.desc,
+    alternates: buildAlternates('/projects', lang),
+  };
+}
 
 export default async function ProjectsPage({
   params,
