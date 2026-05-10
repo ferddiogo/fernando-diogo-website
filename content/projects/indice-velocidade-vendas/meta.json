@@ -1,0 +1,18 @@
+{
+  "slug": "indice-velocidade-vendas",
+  "category": "data-intelligence",
+  "year": 2024,
+  "location": { "pt": "Capital, São Paulo", "en": "São Paulo Capital" },
+  "client": "Construtora multi-segmento",
+  "status": "completed",
+  "cover": "/images/projects/indice-velocidade-vendas/cover.jpg",
+  "gallery": [],
+  "tags": ["powerbi", "vso", "market-analytics"],
+  "title": { "pt": "Índice de Velocidade de Vendas", "en": "Sales Velocity Index" },
+  "summary": {
+    "pt": "Índice mensal de VSO por região, dormitório e faixa de preço para tomada de decisão de lançamentos.",
+    "en": "Monthly sales velocity index by region, bedrooms, and price range for launch decisions."
+  },
+  "metrics": { "atualização": "mensal", "regiões cobertas": 6, "construtoras": "98+" },
+  "dashboardEmbed": ""
+}

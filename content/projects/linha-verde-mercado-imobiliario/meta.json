@@ -1,0 +1,32 @@
+{
+  "slug": "linha-verde-mercado-imobiliario",
+  "category": "data-intelligence",
+  "year": 2025,
+  "location": { "pt": "São José dos Campos, SP", "en": "São José dos Campos, SP, Brazil" },
+  "client": "Estudo independente",
+  "status": "in-progress",
+  "cover": "/images/projects/linha-verde-mercado-imobiliario/cover.jpg",
+  "gallery": [
+    "/images/projects/linha-verde-mercado-imobiliario/01.jpg",
+    "/images/projects/linha-verde-mercado-imobiliario/02.jpg",
+    "/images/projects/linha-verde-mercado-imobiliario/03.jpg",
+    "/images/projects/linha-verde-mercado-imobiliario/04.jpg"
+  ],
+  "tags": ["powerbi", "transit-oriented", "densification", "demographic-analysis"],
+  "title": {
+    "pt": "Linha Verde & Mercado Imobiliário",
+    "en": "Linha Verde & Real Estate Market"
+  },
+  "summary": {
+    "pt": "Como o BRT Linha Verde está reorganizando a produção imobiliária de São José dos Campos. Análise espacial cruzando lançamentos verticais (2020–2025), zoneamento e isócronas das estações.",
+    "en": "How the Linha Verde BRT is reshaping real estate production in São José dos Campos. Spatial analysis crossing vertical launches (2020–2025), zoning, and station isochrones."
+  },
+  "metrics": {
+    "lançamentos analisados": "centenas",
+    "horizonte temporal": "2020–2025",
+    "estações mapeadas": 12,
+    "extensão": "14,5 km",
+    "zonas cobertas": 6
+  },
+  "dashboardEmbed": ""
+}

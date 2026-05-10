@@ -1,0 +1,17 @@
+{
+  "slug": "atelier-pinheiros",
+  "category": "interior",
+  "year": 2024,
+  "location": { "pt": "Pinheiros, São Paulo", "en": "Pinheiros, São Paulo" },
+  "client": "Escritório de design",
+  "status": "completed",
+  "cover": "/images/projects/atelier-pinheiros/cover.jpg",
+  "gallery": ["/images/projects/atelier-pinheiros/01.jpg"],
+  "tags": ["interior", "office", "adaptive-reuse"],
+  "title": { "pt": "Atelier Pinheiros", "en": "Pinheiros Atelier" },
+  "summary": {
+    "pt": "Reforma de galpão de 180 m² em ateliê para escritório de design.",
+    "en": "Renovation of a 180 m² warehouse into a design studio atelier."
+  },
+  "metrics": { "area": "180 m²", "duration": "4 meses" }
+}

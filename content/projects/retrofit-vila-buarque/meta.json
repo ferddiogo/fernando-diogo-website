@@ -1,0 +1,17 @@
+{
+  "slug": "retrofit-vila-buarque",
+  "category": "architecture",
+  "year": 2025,
+  "location": { "pt": "Vila Buarque, São Paulo", "en": "Vila Buarque, São Paulo" },
+  "client": "Investidor privado",
+  "status": "in-progress",
+  "cover": "/images/projects/retrofit-vila-buarque/cover.jpg",
+  "gallery": ["/images/projects/retrofit-vila-buarque/01.jpg"],
+  "tags": ["retrofit", "heritage", "mixed-use"],
+  "title": { "pt": "Retrofit Vila Buarque", "en": "Vila Buarque Retrofit" },
+  "summary": {
+    "pt": "Reabilitação de edifício art déco de 1938 com novo programa misto (residencial + comercial).",
+    "en": "Rehabilitation of a 1938 art deco building into mixed-use program (residential + commercial)."
+  },
+  "metrics": { "area": "2.100 m²", "floors": 6, "ano de construção": 1938 }
+}

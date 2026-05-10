@@ -1,0 +1,20 @@
+{
+  "slug": "casa-mata",
+  "category": "architecture",
+  "year": 2023,
+  "location": { "pt": "Serra da Mantiqueira, BR", "en": "Mantiqueira Range, Brazil" },
+  "client": "Família privada",
+  "status": "completed",
+  "cover": "/images/projects/casa-mata/cover.jpg",
+  "gallery": [
+    "/images/projects/casa-mata/01.jpg",
+    "/images/projects/casa-mata/02.jpg"
+  ],
+  "tags": ["single-family", "rural", "wood-construction"],
+  "title": { "pt": "Casa Mata", "en": "Mata House" },
+  "summary": {
+    "pt": "Residência unifamiliar implantada em clareira de mata atlântica preservada.",
+    "en": "Single-family home set in a clearing of preserved Atlantic forest."
+  },
+  "metrics": { "area": "320 m²", "floors": 2, "site": "8.000 m²" }
+}
