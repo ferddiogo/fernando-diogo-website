@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "hobbies": "Hobbies",
+    "contact": "Contact"
+  },
+  "buttons": {
+    "learnMore": "Learn more",
+    "letsTalk": "Let's talk",
+    "viewProject": "View project",
+    "viewAll": "View all",
+    "backToProjects": "Back to projects",
+    "send": "Send message",
+    "sending": "Sending...",
+    "sent": "Message sent!"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "type": "Project type",
+    "typeOptions": {
+      "architecture": "Architecture",
+      "data": "Real Estate Intelligence",
+      "consulting": "Consulting",
+      "other": "Other"
+    },
+    "message": "Message",
+    "errorGeneric": "Something went wrong. Try again or email directly.",
+    "errorRequired": "Required field"
+  },
+  "labels": {
+    "year": "Year",
+    "location": "Location",
+    "category": "Category",
+    "client": "Client",
+    "status": "Status",
+    "area": "Area",
+    "floors": "Floors",
+    "units": "Units",
+    "tags": "Tags",
+    "next": "Next",
+    "previous": "Previous",
+    "filterAll": "All"
+  },
+  "categories": {
+    "architecture": "Architecture",
+    "data-intelligence": "Real Estate Intelligence",
+    "urban-study": "Urban Studies",
+    "interior": "Interiors"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "tagline": "Architecture · Real Estate Intelligence"
+  }
+}
