@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fernando Diogo — Personal Website
 
-## Getting Started
+Bilingual (PT/EN) portfolio for Fernando Diogo, architect and real-estate market analyst.
 
-First, run the development server:
+## Stack
+
+Next.js 16 · React 19 · TypeScript · Tailwind 4 · MDX · Framer Motion · Vercel · Formspree
+
+## Quick start
 
 ```bash
+npm install
+cp .env.local.example .env.local      # fill NEXT_PUBLIC_FORMSPREE_ID
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 — redirects to `/pt`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Editing content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Read **[docs/EDITING.md](./docs/EDITING.md)** for the non-technical editor's guide.
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+- **Routes**: `/pt/...` and `/en/...` (statically rendered, see `app/[lang]/`)
+- **Content**: `content/{ui,site,about,hobbies}/{pt,en}.json` + `content/projects/<slug>/{meta.json,pt.mdx,en.mdx}`
+- **Design tokens**: `styles/tokens.css` — change colors here
+- **Logo**: `components/brand/Logo.tsx` (SVG, no static asset)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+npm run start
+```
 
-## Deploy on Vercel
+## Test
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm test
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Tests cover the i18n loaders, content loaders, and middleware logic.
+
+## Deploy
+
+Push to GitHub. Connect the repo to Vercel. Set `NEXT_PUBLIC_FORMSPREE_ID` in Vercel env vars. Done.
+
+## Project structure
+
+```
+app/[lang]/        → all routes, statically rendered
+content/           → all editable content (JSON + MDX)
+components/        → React components, organized by domain
+lib/               → loaders, i18n config, helpers
+public/images/     → all imagery
+styles/            → tokens.css (palette) + globals
+docs/              → spec, plan, editing guide
+```
+
+## License
+
+Personal portfolio — all content rights reserved by Fernando Diogo. Code structure available for reference.
