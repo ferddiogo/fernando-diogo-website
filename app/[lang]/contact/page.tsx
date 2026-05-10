@@ -56,7 +56,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
             </a>
           </div>
           <div className="md:col-span-7">
-            <ContactForm dict={dict} />
+            <ContactForm dict={dict} recipientEmail={site.social.email} />
           </div>
         </div>
       </Container>

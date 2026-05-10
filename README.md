@@ -1,229 +1,322 @@
 # Site do Fernando Diogo
 
-Portfolio bilingue (PT/EN) do Fernando Diogo — estudante de Arquitetura com foco em mercado imobiliário. Site construído em Next.js 16 e otimizado para que **qualquer pessoa, mesmo sem saber programar, possa atualizar textos, imagens e projetos**.
+🌐 **Site online:** https://fernando-diogo-website.vercel.app
+📂 **Repositório:** https://github.com/0xFelipeGD/fernando-diogo-website
 
-> Se chegaste aqui para editar conteúdo, salta direto para [Como editar](#como-editar). Se quiseres perceber como o site está organizado tecnicamente, vai a [Arquitetura técnica](#arquitetura-técnica).
+Portfolio bilingue (PT/EN) do Fernando Diogo — estudante de Arquitetura com foco em mercado imobiliário.
+
+---
+
+## 👋 Antes de começar
+
+Este guia assume que **nunca programaste**. Foi escrito para que possas alterar textos, imagens e projetos sem mexer em código nem instalar nada.
+
+Tens **dois caminhos** para editar o site:
+
+| Caminho | Quando usar | Precisa de instalar algo? |
+|---|---|---|
+| **🟢 Fácil — pelo navegador** | Mudar textos, trocar imagens, editar projetos pequenos | Não. Só precisas de uma conta GitHub. |
+| **🟠 Completo — no teu computador** | Mudanças grandes (vários ficheiros de uma vez), testar antes de publicar, mudar cores/layout | Sim — Git, Node.js e VS Code. |
+
+> **Recomendação:** começa pelo **caminho fácil**. 90% das edições são mudar texto ou trocar uma imagem — para isso, não precisas de instalar nada.
+
+Cada vez que guardas uma alteração, o site **online atualiza-se sozinho em ~1 minuto**. Não há botão de "publicar".
 
 ---
 
 ## Índice
 
-1. [Para começar (apenas uma vez)](#para-começar-apenas-uma-vez)
-2. [Como editar](#como-editar)
-   - [Trocar textos da página inicial](#trocar-textos-da-página-inicial)
-   - [Trocar imagens](#trocar-imagens)
-   - [Editar um projeto existente](#editar-um-projeto-existente)
-   - [Adicionar um projeto novo](#adicionar-um-projeto-novo)
-   - [Reordenar ou esconder projetos](#reordenar-ou-esconder-projetos)
-   - [Editar a página Perfil (skills + CV)](#editar-a-página-perfil-skills--cv)
-   - [Editar hobbies](#editar-hobbies)
-   - [Mudar email e redes sociais](#mudar-email-e-redes-sociais)
-   - [Mudar a paleta de cores](#mudar-a-paleta-de-cores)
-   - [Embed de dashboard PowerBI](#embed-de-dashboard-powerbi)
-3. [Publicar as alterações](#publicar-as-alterações)
-4. [Resolução de problemas](#resolução-de-problemas)
-5. [Arquitetura técnica](#arquitetura-técnica)
+- [🟢 Caminho fácil: editar pelo navegador](#-caminho-fácil-editar-pelo-navegador)
+- [🟠 Caminho completo: no teu computador](#-caminho-completo-no-teu-computador)
+- [📍 Onde fica cada coisa do site](#-onde-fica-cada-coisa-do-site)
+- [✏️ Como editar...](#%EF%B8%8F-como-editar)
+  - [...textos da página inicial](#textos-da-página-inicial)
+  - [...imagens](#imagens)
+  - [...um projeto existente](#um-projeto-existente)
+  - [...adicionar um projeto novo](#adicionar-um-projeto-novo)
+  - [...reordenar ou esconder projetos](#reordenar-ou-esconder-projetos)
+  - [...a página Perfil (skills + CV)](#a-página-perfil-skills--cv)
+  - [...os hobbies](#os-hobbies)
+  - [...email e redes sociais](#email-e-redes-sociais)
+  - [...as cores do site](#as-cores-do-site)
+- [📊 Embed de dashboard PowerBI](#-embed-de-dashboard-powerbi)
+- [📖 Glossário](#-glossário)
+- [🩹 Resolução de problemas](#-resolução-de-problemas)
+- [⚙️ Arquitetura técnica (para developers)](#%EF%B8%8F-arquitetura-técnica-para-developers)
 
 ---
 
-## Para começar (apenas uma vez)
+## 🟢 Caminho fácil: editar pelo navegador
 
-### O que precisas instalar no computador
+Toda a edição acontece em https://github.com/0xFelipeGD/fernando-diogo-website. Basta uma conta GitHub (gratuita).
 
-1. **[Git](https://git-scm.com/)** — para sincronizar com o GitHub
-2. **[Node.js](https://nodejs.org/)** versão 20 ou superior — para correr o site localmente
-3. **[VS Code](https://code.visualstudio.com/)** (recomendado) — editor amigável para abrir os ficheiros
+### Passo 1: Abrir o ficheiro a editar
 
-### Clonar o repositório
+1. Vai a https://github.com/0xFelipeGD/fernando-diogo-website
+2. Clica nas pastas para navegar até ao ficheiro (ex: `content` → `site` → `pt.json`)
+3. Clica no ficheiro para o ver
 
-Abre o terminal e corre:
+### Passo 2: Editar
+
+1. No canto superior direito do ficheiro, clica no **lápis** ✏️ ("Edit this file")
+2. O GitHub abre um editor no próprio navegador
+3. Faz as alterações que quiseres
+4. Em baixo, na caixa **"Commit changes..."**, escreve uma descrição curta do que mudaste (ex: *"Atualizei a bio"*)
+5. Clica no botão verde **"Commit changes"**
+
+### Passo 3: Esperar
+
+Em ~1 minuto, o site online atualiza com as tuas alterações. Pronto.
+
+> **Aviso pra ficheiros JSON:** se editares um `.json` e quebrares a sintaxe (esqueceres uma vírgula, fechares mal um colchete), o site dá erro no deploy. Se acontecer, vê em [Resolução de problemas](#-resolução-de-problemas) — é fácil de reverter.
+
+### Como trocar uma imagem pelo navegador
+
+1. Vai a https://github.com/0xFelipeGD/fernando-diogo-website
+2. Navega até à pasta da imagem (ex: `public/images/about/`)
+3. Clica no ficheiro existente (ex: `portrait.jpg`)
+4. Em cima à direita, clica nos **três pontinhos `…`** → **"Delete file"**
+5. Faz commit do delete
+6. Volta à pasta, clica em **"Add file"** → **"Upload files"**
+7. Arrasta a nova imagem para lá. **Mantém o mesmo nome de ficheiro** (ex: `portrait.jpg`)
+8. Faz commit
+
+Em alternativa, podes usar o caminho completo (mais cómodo para muitas imagens).
+
+### Como criar um ficheiro novo (ex: novo projeto)
+
+1. Navega até à pasta onde queres o ficheiro
+2. Clica em **"Add file"** → **"Create new file"**
+3. Escreve o nome do ficheiro (ex: `meta.json`)
+4. Cola o conteúdo
+5. Faz commit
+
+Para criar uma pasta nova, escreve o nome da pasta seguido de `/` no nome do ficheiro: ex: `o-meu-projeto/meta.json` cria a pasta `o-meu-projeto` automaticamente.
+
+---
+
+## 🟠 Caminho completo: no teu computador
+
+Usa este caminho se vais fazer **muitas mudanças de uma vez** ou quiseres ver o resultado **antes de publicar**.
+
+### Instalações (uma vez só)
+
+1. **[Git](https://git-scm.com/downloads)** — faz a sincronização com o GitHub
+2. **[Node.js](https://nodejs.org/)** — versão 20 ou superior. Necessário para correr o site no teu computador.
+3. **[VS Code](https://code.visualstudio.com/)** — editor de código simpático. Vai mostrar erros de JSON em tempo real, super útil.
+
+> **Como abrir o "terminal":**
+> - **Mac:** carrega `Cmd + Espaço`, escreve "Terminal", carrega Enter
+> - **Windows:** carrega `Win`, escreve "PowerShell", carrega Enter
+> - **Linux:** abre o "Terminal" das aplicações
+
+### Clonar o site para o teu computador (uma vez só)
+
+No terminal:
 
 ```bash
-git clone <url-do-repositorio>
-cd Arch-website
+git clone https://github.com/0xFelipeGD/fernando-diogo-website.git
+cd fernando-diogo-website
 npm install
 ```
 
-### Configurar o formulário de contacto (uma vez só)
+A última linha descarrega todas as dependências (demora ~1 minuto).
 
-O formulário usa o [Formspree](https://formspree.io) para enviar emails — gratuito até 50 mensagens por mês.
-
-1. Cria conta em [formspree.io](https://formspree.io)
-2. Clica em **New Form**, escolhe um nome qualquer (ex: "Fernando Site")
-3. Copia o ID do formulário (algo como `xpzgkqwe`)
-4. Cria um ficheiro chamado `.env.local` na raiz do repositório com:
-
-   ```
-   NEXT_PUBLIC_FORMSPREE_ID=xpzgkqwe
-   ```
-
-   (substitui pelo teu ID real)
-
-5. Quando puseres o site online (ver [Publicar](#publicar-as-alterações)), adiciona a mesma variável no painel do Vercel.
-
-### Ver o site localmente
+### Ver o site no teu computador
 
 ```bash
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000) no navegador. Sempre que guardares um ficheiro, o navegador atualiza sozinho.
+Abre http://localhost:3000 no navegador. Sempre que guardares um ficheiro, o navegador atualiza sozinho.
+
+Para parar, no terminal carrega `Ctrl + C`.
+
+### Publicar as alterações
+
+Sempre que mudares algo, no terminal:
+
+```bash
+git add .
+git commit -m "Atualizei o texto da home"
+git push
+```
+
+- `git add .` — marca todas as tuas alterações para serem enviadas
+- `git commit -m "..."` — embrulha as alterações com uma descrição
+- `git push` — envia para o GitHub
+
+Em ~1 minuto o site online atualiza.
 
 ---
 
-## Como editar
+## 📍 Onde fica cada coisa do site
 
-> **Regra de ouro:** o conteúdo do site vive todo dentro da pasta `content/` e da pasta `public/images/`. Não precisas de tocar em mais nada para edições normais.
+```
+fernando-diogo-website/
+│
+├── content/                    👈 TODO o conteúdo editável vive aqui
+│   ├── site/pt.json            ← textos da página inicial (PT)
+│   ├── site/en.json            ← textos da página inicial (EN)
+│   ├── ui/pt.json              ← itens do menu, botões, formulário (PT)
+│   ├── ui/en.json              ← itens do menu, botões, formulário (EN)
+│   ├── profile/pt.json         ← skills, línguas, formação (PT)
+│   ├── profile/en.json         ← skills, línguas, formação (EN)
+│   ├── hobbies/pt.json         ← lista de hobbies (PT)
+│   ├── hobbies/en.json         ← lista de hobbies (EN)
+│   └── projects/
+│       ├── _index.json         ← ordem e visibilidade dos projetos
+│       └── <nome-do-projeto>/
+│           ├── meta.json       ← dados estruturados do projeto
+│           ├── pt.mdx          ← texto longo em PT
+│           └── en.mdx          ← texto longo em EN
+│
+├── public/                     👈 imagens e ficheiros públicos
+│   ├── images/                 ← todas as imagens do site
+│   └── cv/                     ← PDFs do CV (PT e EN)
+│
+└── styles/tokens.css           👈 paleta de cores
+```
 
-### Trocar textos da página inicial
+**Regra de ouro:** se queres mudar conteúdo, está em `content/` ou em `public/images/`. Não tens de tocar em mais nada.
 
-| O que queres mudar | Ficheiro |
+---
+
+## ✏️ Como editar...
+
+### ...textos da página inicial
+
+Edita **`content/site/pt.json`** (e a mesma coisa em `content/site/en.json` para a versão inglesa).
+
+| Mudar | Onde no ficheiro |
 |---|---|
-| Título grande do hero | `content/site/pt.json` → `hero.headline` e `hero.sublineLine1` |
-| Texto debaixo do título | `content/site/pt.json` → `hero.subline` |
-| Botão principal do hero | `content/site/pt.json` → `hero.cta` |
-| "Em destaque" no hero (canto da imagem) | `content/site/pt.json` → `hero.featuredProjectChip` |
-| Os 4 números (50/3/80/20) | `content/site/pt.json` → `stats` |
-| Bloco "Duas linguagens, um olhar" | `content/site/pt.json` → `dualSpecialty` |
-| Texto sobre dashboards (PowerBI) | `content/site/pt.json` → `dataInsights` |
-| Bio do "Sobre" | `content/site/pt.json` → `about` |
-| Banda preta de chamada para contacto | `content/site/pt.json` → `contactCta` |
+| Título grande do hero | `hero.headline` e `hero.sublineLine1` |
+| Texto debaixo do título | `hero.subline` |
+| Botão principal | `hero.cta` |
+| "Em destaque" no canto da imagem | `hero.featuredProjectChip` |
+| Os 4 números (50/3/80/20) | `stats` |
+| "Duas linguagens, um olhar" | `dualSpecialty` |
+| Bloco "Da planta ao painel" | `dataInsights` |
+| Bio do bloco "Sobre" | `about` |
+| Banda preta antes do rodapé | `contactCta` |
 
-Para a versão em inglês do site, edita o ficheiro paralelo `content/site/en.json` (mesma estrutura, mesmas chaves, valores traduzidos).
+**Itens do menu** (Início, Projetos, Perfil, Hobbies, Contacto): em `content/ui/pt.json` (e `en.json`).
 
-**Itens do menu** (Início, Projetos, Hobbies, Contacto) ficam em `content/ui/pt.json` e `content/ui/en.json`.
+> **Atenção:** o ficheiro tem que continuar a ser **JSON válido**. Vê o [Glossário → JSON](#-glossário) se nunca editaste um.
 
-### Trocar imagens
+---
+
+### ...imagens
 
 Cada imagem do site tem um caminho fixo. Para trocar:
 
 1. Vai à pasta `public/images/`
-2. Encontra o ficheiro que queres substituir
-3. Substitui-o por uma nova imagem **com exatamente o mesmo nome**
-4. Tamanho recomendado: máximo **2400px** de largura, formato **JPG**
+2. Encontra o ficheiro a substituir
+3. Substitui-o pela nova imagem **com exatamente o mesmo nome**
+4. Tamanho recomendado: **máximo 2400px de largura**, formato JPG
+
+> **Como verificar o tamanho de uma imagem:** clica com o botão direito → "Propriedades" / "Get Info". Procura "Dimensões" ou "Resolução". Se for muito grande, usa um redimensionador online como [squoosh.app](https://squoosh.app) (não precisa de conta).
 
 **Mapa rápido das imagens principais:**
 
 ```
 public/images/
 ├── hero/hero-architecture.jpg          ← imagem grande do hero
-├── about/portrait.jpg                   ← retrato do Fernando no "Sobre"
-├── data-insights/dashboard-preview.jpg  ← imagem do bloco "Da planta ao painel"
-├── projects/<slug>/cover.jpg            ← capa de cada projeto
-├── projects/<slug>/01.jpg, 02.jpg…      ← imagens da galeria de cada projeto
+├── about/portrait.jpg                  ← retrato do bloco "Sobre" e do Perfil
+├── data-insights/dashboard-preview.jpg ← imagem do bloco "Da planta ao painel"
+├── projects/<projeto>/cover.jpg        ← capa de cada projeto
+├── projects/<projeto>/01.jpg, 02.jpg…  ← imagens da galeria de cada projeto
 └── hobbies/photography.jpg, cycling.jpg, … ← imagens dos hobbies
 ```
 
-> **Dica:** se quiseres usar uma imagem com nome diferente, abre o ficheiro JSON correspondente (`meta.json` do projeto, `pt.json` do site, etc.) e atualiza o caminho.
+---
 
-> **A imagem antiga continua a aparecer mesmo depois de substituir?** Vê em [Resolução de problemas](#resolução-de-problemas).
-
-### Editar um projeto existente
+### ...um projeto existente
 
 Cada projeto tem uma pasta em `content/projects/<nome-do-projeto>/` com 3 ficheiros:
 
 | Ficheiro | O que contém |
 |---|---|
-| `meta.json` | Metadados estruturados: ano, localização, área, capa, galeria, tags, título, resumo |
-| `pt.mdx` | Texto longo do projeto em português (corpo do artigo) |
+| `meta.json` | Dados estruturados (ano, localização, área, capa, galeria, tags, título, resumo) |
+| `pt.mdx` | Texto longo do projeto em português |
 | `en.mdx` | Texto longo do projeto em inglês |
 
-**Para editar o texto longo de um projeto** (parte que aparece quando alguém clica no projeto):
+**Para mudar o texto longo:** abre `pt.mdx`, edita normalmente. Usa `##` para títulos de secção, `**negrito**`, `*itálico*`, listas com `-`. Vê o [Glossário → MDX](#-glossário).
 
-1. Abre `content/projects/<nome>/pt.mdx`
-2. Edita normalmente — usa `##` para títulos de secção, `**negrito**`, `*itálico*`, listas com `-`
-3. Faz o mesmo no `en.mdx` para a versão inglesa
+**Para mudar dados estruturados** (ano, área, tags, etc.): abre `meta.json` e edita. Tem que continuar a ser JSON válido.
 
-**Para mudar dados estruturados** (ano, área, tags, etc.):
+---
 
-Abre `meta.json` e edita os valores. Atenção: tem de continuar a ser JSON válido — **aspas duplas em tudo, sem vírgulas a sobrar**.
+### ...adicionar um projeto novo
 
-### Adicionar um projeto novo
+#### Passo 1: criar a pasta e os ficheiros
 
-1. **Cria a pasta** com um slug em minúsculas e hífenes:
+Cria uma pasta com um *slug* (ver glossário) em `content/projects/`:
 
-   ```
-   content/projects/o-meu-novo-projeto/
-   ```
+```
+content/projects/o-meu-novo-projeto/
+```
 
-2. **Cria os 3 ficheiros** dentro dessa pasta:
+Dentro, cria 3 ficheiros:
 
-   **`meta.json`** (copia, cola e adapta):
+**`meta.json`** (copia, cola e adapta):
 
-   ```json
-   {
-     "slug": "o-meu-novo-projeto",
-     "category": "architecture",
-     "year": 2025,
-     "location": { "pt": "Lisboa, PT", "en": "Lisbon, Portugal" },
-     "client": "Cliente privado",
-     "status": "completed",
-     "cover": "/images/projects/o-meu-novo-projeto/cover.jpg",
-     "gallery": [
-       "/images/projects/o-meu-novo-projeto/01.jpg",
-       "/images/projects/o-meu-novo-projeto/02.jpg"
-     ],
-     "tags": ["residential", "renovation"],
-     "title": { "pt": "O Meu Novo Projeto", "en": "My New Project" },
-     "summary": {
-       "pt": "Resumo curto numa linha que aparece nos cartões.",
-       "en": "Short one-line summary that appears on the cards."
-     },
-     "metrics": { "área": "180 m²", "pisos": 2 }
-   }
-   ```
+```json
+{
+  "slug": "o-meu-novo-projeto",
+  "category": "architecture",
+  "year": 2025,
+  "location": { "pt": "Lisboa, PT", "en": "Lisbon, Portugal" },
+  "client": "Cliente privado",
+  "status": "completed",
+  "cover": "/images/projects/o-meu-novo-projeto/cover.jpg",
+  "gallery": [
+    "/images/projects/o-meu-novo-projeto/01.jpg",
+    "/images/projects/o-meu-novo-projeto/02.jpg"
+  ],
+  "tags": ["residential", "renovation"],
+  "title": { "pt": "O Meu Novo Projeto", "en": "My New Project" },
+  "summary": {
+    "pt": "Resumo curto numa linha que aparece nos cartões.",
+    "en": "Short one-line summary that appears on the cards."
+  },
+  "metrics": { "área": "180 m²", "pisos": 2 }
+}
+```
 
-   **Categorias válidas:** `architecture`, `data-intelligence`, `urban-study`, `interior`.
+**Categorias válidas:** `architecture`, `data-intelligence`, `urban-study`, `interior`.
 
-   **`pt.mdx`** (texto livre em português):
+**`pt.mdx`** (texto livre):
 
-   ```markdown
-   ## O conceito
+```markdown
+## O conceito
 
-   Texto de abertura. Podes usar **negrito**, *itálico*, listas:
+Texto de abertura. Podes usar **negrito**, *itálico*, listas:
 
-   - Item 1
-   - Item 2
+- Item 1
+- Item 2
 
-   ## O processo
+## O processo
 
-   Mais texto.
+Mais texto.
 
-   ## O resultado
+## O resultado
 
-   Conclusão.
-   ```
+Conclusão.
+```
 
-   **`en.mdx`** — versão inglesa, mesma estrutura.
+**`en.mdx`** — versão inglesa, mesma estrutura.
 
-3. **Adiciona as imagens** em `public/images/projects/o-meu-novo-projeto/`:
-   - Pelo menos `cover.jpg`
-   - Mais imagens da galeria se quiseres (`01.jpg`, `02.jpg`, …)
+#### Passo 2: adicionar imagens
 
-4. **Regista o projeto** em `content/projects/_index.json`:
+Em `public/images/projects/o-meu-novo-projeto/`:
 
-   ```json
-   {
-     "featured": ["torre-helix", "linha-verde-mercado-imobiliario", "casa-mata"],
-     "all": [
-       "torre-helix",
-       "linha-verde-mercado-imobiliario",
-       "casa-mata",
-       "atelier-pinheiros",
-       "indice-velocidade-vendas",
-       "retrofit-vila-buarque",
-       "o-meu-novo-projeto"
-     ]
-   }
-   ```
+- `cover.jpg` (obrigatória — é a capa)
+- `01.jpg`, `02.jpg`, … (opcionais — galeria)
 
-   **Adiciona o slug no array `all`**. Se quiseres que apareça em destaque na home, também o pões no array `featured` (máximo 3 recomendado).
+#### Passo 3: registar o projeto
 
-5. **Guarda, faz commit e push** (ver [Publicar](#publicar-as-alterações)).
-
-### Reordenar ou esconder projetos
-
-O ficheiro `content/projects/_index.json` controla **ordem** e **visibilidade**:
+Edita `content/projects/_index.json` e adiciona o slug ao array `all`:
 
 ```json
 {
@@ -234,88 +327,54 @@ O ficheiro `content/projects/_index.json` controla **ordem** e **visibilidade**:
     "casa-mata",
     "atelier-pinheiros",
     "indice-velocidade-vendas",
-    "retrofit-vila-buarque"
+    "retrofit-vila-buarque",
+    "o-meu-novo-projeto"
   ]
 }
 ```
 
-- **Para reordenar a página de Projetos:** muda a ordem dos slugs no array `all`
-- **Para reordenar os destacados na home:** muda a ordem em `featured`
-- **Para esconder um projeto temporariamente:** remove o slug de `all` (mantém os ficheiros, simplesmente não aparece)
-- **Para apagar definitivamente:** remove de `all`/`featured` e apaga a pasta `content/projects/<slug>/`
+Se quiseres que apareça em destaque na home, adiciona também ao array `featured` (máximo 3 recomendado).
 
-### Editar a página Perfil (skills + CV)
+---
 
-A página `/pt/profile` (e `/en/profile`) mostra capacidades, línguas, formação e tem o botão de download do CV. Tudo é editável a partir de dois sítios:
+### ...reordenar ou esconder projetos
 
-**1. Conteúdo (textos, capacidades, línguas, formação):** `content/profile/pt.json` e `content/profile/en.json`.
+Tudo controlado em `content/projects/_index.json`:
 
-Estrutura do ficheiro:
+- **Reordenar a página de Projetos:** muda a ordem dos slugs no array `all`
+- **Reordenar os destacados na home:** muda a ordem em `featured`
+- **Esconder um projeto temporariamente:** remove o slug de `all` (mantém os ficheiros, simplesmente não aparece)
+- **Apagar definitivamente:** remove de `all` e `featured`, e apaga a pasta `content/projects/<slug>/`
 
-```json
-{
-  "hero": {
-    "eyebrow": "Perfil",
-    "title": "Estudante de Arquitetura,",
-    "titleAccent": "obcecado por como as cidades funcionam.",
-    "subtitle": "...",
-    "cvButton": "Descarregar CV",
-    "cvFile": "/cv/fernando-diogo-cv-pt.pdf",
-    "cvFilename": "fernando-diogo-cv-pt.pdf"
-  },
-  "skills": {
-    "categories": [
-      {
-        "title": "Arquitetura & Design",
-        "items": ["Revit (BIM)", "AutoCAD", "SketchUp", "..."]
-      },
-      ...
-    ]
-  },
-  "languages": {
-    "items": [
-      { "name": "Português", "level": "Nativo", "proficiency": 100 },
-      { "name": "Inglês",    "level": "Avançado · C1", "proficiency": 85 },
-      ...
-    ]
-  },
-  "education": {
-    "items": [
-      {
-        "period": "2022 — atual",
-        "title": "Licenciatura em Arquitetura",
-        "institution": "Faculdade de Arquitetura",
-        "description": "Em formação. Foco em projeto urbano e tecnologia construtiva."
-      },
-      ...
-    ]
-  }
-}
-```
+---
 
-- **Adicionar uma capacidade nova:** adiciona uma string ao array `items` da categoria certa.
-- **Adicionar uma categoria nova:** adiciona um objeto novo ao array `skills.categories` com `title` e `items`. Usa o mesmo padrão de ícone do site (canto preenchido).
-- **Mudar o nível de uma língua:** altera `proficiency` (0-100, controla a barra) e `level` (texto que aparece à direita).
-- **Adicionar uma entrada de formação:** adiciona um objeto ao array `education.items` com `period`, `title`, `institution` e `description`. A ordem do array é a ordem na timeline (mais recente em cima).
+### ...a página Perfil (skills + CV)
 
-**2. O ficheiro do CV:** `public/cv/fernando-diogo-cv-pt.pdf` e `public/cv/fernando-diogo-cv-en.pdf`.
+Edita `content/profile/pt.json` (e `en.json`):
 
-Para substituir pelo CV real:
+- **Adicionar uma capacidade nova:** adiciona uma string ao array `items` da categoria certa em `skills.categories`.
+- **Adicionar uma categoria nova:** adiciona um objeto novo ao array `skills.categories` com `title` e `items`.
+- **Mudar o nível de uma língua:** altera `proficiency` (0-100, controla a barra) e `level` (texto).
+- **Adicionar entrada de formação:** adiciona um objeto ao array `education.items` com `period`, `title`, `institution` e `description`. A ordem do array é a ordem na timeline (mais recente em cima).
 
-1. Exporta o teu CV para PDF (PT e EN, se quiseres ambas as versões)
+**Substituir o CV** (atualmente é um placeholder):
+
+1. Exporta o CV para PDF (PT e EN, se quiseres ambas as versões)
 2. Renomeia para `fernando-diogo-cv-pt.pdf` e `fernando-diogo-cv-en.pdf`
 3. Substitui os ficheiros existentes em `public/cv/` (mantém os mesmos nomes)
-4. Faz commit e push
+4. Faz commit
 
-> Se preferires usar nomes diferentes, edita os campos `hero.cvFile` e `hero.cvFilename` em `content/profile/pt.json` (e `en.json`) para apontar para o novo ficheiro.
+---
 
-Os ficheiros que estão lá agora são placeholders — vão dar download de um PDF de uma página a dizer "Substitui este ficheiro pelo CV real" até serem substituídos.
+### ...os hobbies
 
-### Editar hobbies
+Edita `content/hobbies/pt.json` (e `en.json`). Cada hobby tem `slug`, `title`, `description` e `image`.
 
-Edita `content/hobbies/pt.json` (e `en.json` para a versão inglesa). Cada hobby é um objeto com `slug`, `title`, `description` e `image`. Os slugs têm de ser iguais nos dois idiomas.
+Os slugs têm que ser iguais nos dois idiomas (PT e EN).
 
-### Mudar email e redes sociais
+---
+
+### ...email e redes sociais
 
 Em `content/site/pt.json` (e `en.json`), bloco `social`:
 
@@ -328,11 +387,13 @@ Em `content/site/pt.json` (e `en.json`), bloco `social`:
 }
 ```
 
-Aparece no rodapé e na página de contacto.
+Aparece no rodapé e na página de contacto. **O email aqui é também o destinatário do formulário de contacto** — quando alguém envia o formulário, abre o cliente de email do visitante já preenchido com este endereço.
 
-### Mudar a paleta de cores
+---
 
-Edita `styles/tokens.css`. As cores estão todas no topo do ficheiro:
+### ...as cores do site
+
+Edita `styles/tokens.css`. As cores estão todas no topo:
 
 ```css
 :root {
@@ -347,15 +408,16 @@ Edita `styles/tokens.css`. As cores estão todas no topo do ficheiro:
   --accent:      #FF6B35;  /* laranja — botões e destaques */
   --steel:       #0F1E3D;  /* azul escuro — marca, dados */
   --line:        #E8E2D6;  /* linhas finas */
-  /* ... */
 }
 ```
 
-Muda qualquer hexadecimal e o site inteiro adapta-se automaticamente.
+Muda qualquer hexadecimal e o site inteiro adapta-se. Para escolher cores HEX visualmente, usa [coolors.co](https://coolors.co) ou o conta-gotas do macOS.
 
-### Embed de dashboard PowerBI
+---
 
-Para projetos da categoria `data-intelligence`, o site mostra um placeholder "Dashboard interativo em breve" sobre a imagem de capa. Para o substituir por um dashboard real e interativo:
+## 📊 Embed de dashboard PowerBI
+
+Para projetos da categoria `data-intelligence`, o site mostra um placeholder *"Dashboard interativo em breve"* sobre a imagem de capa. Para o substituir por um dashboard real e interativo:
 
 1. No PowerBI Service, abre o relatório.
 2. Vai a **File → Embed report → Publish to web (public)**.
@@ -363,7 +425,7 @@ Para projetos da categoria `data-intelligence`, o site mostra um placeholder "Da
 4. Copia essa URL.
 5. Abre o `meta.json` do projeto (ex: `content/projects/linha-verde-mercado-imobiliario/meta.json`).
 6. Cola a URL no campo `"dashboardEmbed": "..."`.
-7. Faz commit e push.
+7. Faz commit.
 
 O site renderiza automaticamente um iframe interativo (filtros, slicers e drill-down funcionam).
 
@@ -371,63 +433,94 @@ O site renderiza automaticamente um iframe interativo (filtros, slicers e drill-
 
 ---
 
-## Publicar as alterações
+## 📖 Glossário
 
-Sempre que mudares qualquer coisa, segue estes três passos:
+### JSON
 
-1. **Guarda os ficheiros** no editor.
+Formato para guardar dados estruturados. Parece com isto:
 
-2. **No terminal**, na raiz do projeto:
+```json
+{
+  "nome": "Fernando",
+  "idade": 22,
+  "ativo": true,
+  "interesses": ["arquitetura", "dados"]
+}
+```
 
-   ```bash
-   git add .
-   git commit -m "Atualizei o texto da home"
-   git push
-   ```
+**Regras importantes:**
+- **Aspas duplas** (não simples): `"correto"`, não `'errado'`
+- **Vírgulas entre itens**, mas **NÃO** depois do último: `"a", "b", "c"` ✅, `"a", "b", "c",` ❌
+- **Chavetas `{}`** para objetos (campos com nome)
+- **Colchetes `[]`** para listas
+- Texto vai entre aspas, números não
 
-3. **Espera ~1 minuto.** O Vercel deteta o push automaticamente e publica a nova versão.
+**Ferramenta de salvamento:** se algo der erro, cola o JSON em https://jsonlint.com — ele aponta a linha onde está o problema.
 
-Se for a primeira vez que publicas:
+### Slug
 
-- Cria conta gratuita em [vercel.com](https://vercel.com)
-- Em **New Project**, importa o repositório do GitHub
-- Em **Settings → Environment Variables**, adiciona `NEXT_PUBLIC_FORMSPREE_ID` com o teu ID do Formspree
-- Clica em **Deploy**. Pronto.
+Versão "URL-friendly" de um nome. Exemplos:
+
+- "O Meu Novo Projeto" → slug: `o-meu-novo-projeto`
+- "Atelier Pinheiros" → slug: `atelier-pinheiros`
+
+Regras: só **letras minúsculas**, **números** e **hífenes**. Sem espaços, sem acentos, sem caracteres especiais.
+
+### MDX
+
+Markdown com possibilidade de incluir componentes. Para o que precisas, é **igual a Markdown comum**:
+
+| Escreves | Aparece |
+|---|---|
+| `## Título` | um título de secção |
+| `**negrito**` | **negrito** |
+| `*itálico*` | *itálico* |
+| `- item` | uma lista com bola |
+| `1. item` | uma lista numerada |
+| `[texto](https://link)` | link clicável |
+
+### Commit
+
+Uma "fotografia" das alterações. Cada vez que fazes commit, o GitHub guarda o estado do código com a tua descrição. Permite voltar atrás se algo correr mal.
+
+### Push
+
+Enviar os teus commits do computador local para o GitHub. Só depois do `push` é que o site online vê as alterações.
+
+### Branch (ramo)
+
+Uma "linha paralela" do código. Por defeito o site usa a branch `main`. Para edições simples, **vais sempre trabalhar na `main`** — não te preocupes com isto.
 
 ---
 
-## Resolução de problemas
+## 🩹 Resolução de problemas
 
 **O site quebrou depois de eu editar um JSON.**
-Provavelmente o JSON ficou inválido. Cola o conteúdo em [jsonlint.com](https://jsonlint.com) — ele aponta exatamente onde está o erro. JSON exige aspas duplas em tudo e nada de vírgulas a sobrar.
+Provavelmente o JSON ficou inválido. Cola o conteúdo em https://jsonlint.com — ele aponta exatamente onde está o erro.
+
+Para reverter a última alteração: vai ao [GitHub](https://github.com/0xFelipeGD/fernando-diogo-website) → clica no separador **"commits"** → encontra a alteração → clica nos três pontinhos `…` → **"Revert"**.
 
 **A imagem não aparece.**
 - Confirma que o caminho no JSON começa com `/` (ex: `/images/projects/foo/cover.jpg`).
 - Confirma que o ficheiro existe em `public/images/...` com o nome exato (atenção a maiúsculas/minúsculas).
 
 **A imagem antiga continua a aparecer mesmo depois de eu trocar.**
-O Next.js guarda imagens otimizadas em cache. Para forçar a recarregar:
-
-```bash
-rm -rf .next/cache/images
-npm run dev
-```
-
-E faz Ctrl+Shift+R no navegador (recarregamento forçado).
+O navegador ou o Vercel guardam a imagem em cache. Para forçar a recarregar:
+- **Navegador:** carrega `Ctrl + Shift + R` (ou `Cmd + Shift + R` no Mac).
+- **Caminho completo no terminal:** `rm -rf .next/cache/images && npm run dev`
 
 **Mudei a paleta e algo ficou ilegível.**
-Volta atrás:
+Vai ao GitHub → vê o ficheiro `styles/tokens.css` → clica no separador **"History"** → encontra a versão anterior e reverte.
 
+Caminho completo:
 ```bash
 git checkout styles/tokens.css
 ```
 
-Tenta uma cor de cada vez.
-
 **O dashboard PowerBI não aparece embebido.**
 Verifica que a URL no `meta.json` começa com `https://`. Se começar com qualquer outra coisa (caminho de imagem, vazio), o site mostra o placeholder.
 
-**O servidor local não arranca.**
+**O servidor local não arranca (caminho completo).**
 
 ```bash
 rm -rf .next node_modules
@@ -437,7 +530,7 @@ npm run dev
 
 ---
 
-## Arquitetura técnica
+## ⚙️ Arquitetura técnica (para developers)
 
 ### Stack
 
@@ -446,13 +539,13 @@ npm run dev
 - **[Tailwind CSS 4](https://tailwindcss.com/)** + variáveis CSS para a paleta
 - **[MDX](https://mdxjs.com/)** via `@next/mdx` para o corpo dos projetos
 - **[Framer Motion](https://www.framer.com/motion/)** para animações
-- **[Formspree](https://formspree.io/)** para o formulário de contacto (sem backend)
+- **Formulário de contacto:** `mailto:` nativo (sem backend)
 - **[Vercel](https://vercel.com/)** para deployment
 
-### Estrutura de pastas
+### Estrutura completa de pastas
 
 ```
-Arch-website/
+fernando-diogo-website/
 ├── app/
 │   ├── [lang]/             ← Todas as rotas: /pt/* e /en/*
 │   │   ├── page.tsx        ← Página inicial
@@ -465,31 +558,11 @@ Arch-website/
 │   ├── sitemap.ts          ← Gera /sitemap.xml
 │   └── robots.ts           ← Gera /robots.txt
 │
-├── content/                ← TODO o conteúdo editável vive aqui
-│   ├── ui/{pt,en}.json     ← Strings da interface (menu, botões, formulário)
-│   ├── site/{pt,en}.json   ← Conteúdo da página inicial
-│   ├── profile/{pt,en}.json← Skills, línguas, formação, CTA do CV
-│   ├── hobbies/{pt,en}.json← Lista de hobbies
-│   └── projects/
-│       ├── _index.json     ← Ordem e visibilidade dos projetos
-│       └── <slug>/
-│           ├── meta.json   ← Metadados do projeto
-│           ├── pt.mdx      ← Texto longo em PT
-│           └── en.mdx      ← Texto longo em EN
-│
-├── components/
-│   ├── brand/              ← Logo
-│   ├── layout/             ← Header, Footer, LangToggle
-│   ├── home/               ← Secções da página inicial
-│   ├── projects/           ← Cartões, hero, galeria, embed dashboard
-│   ├── profile/            ← Hero, SkillsGrid, Languages, Education
-│   ├── hobbies/            ← Cartões de hobbies
-│   ├── contact/            ← Formulário
-│   └── ui/                 ← Primitivas (Button, Container, etc.)
-│
+├── content/                ← Conteúdo editável (JSON + MDX)
+├── components/             ← Componentes React por domínio
 ├── lib/
 │   ├── i18n/               ← Configuração de idiomas
-│   ├── content/            ← Carregadores de conteúdo (projects, site, profile, hobbies)
+│   ├── content/            ← Carregadores de conteúdo
 │   ├── fonts.ts            ← Configuração das fontes
 │   └── cn.ts               ← Helper para classes condicionais
 │
@@ -497,11 +570,11 @@ Arch-website/
 │   ├── images/             ← Todas as imagens
 │   └── cv/                 ← PDFs do CV (PT e EN)
 ├── styles/tokens.css       ← Paleta de cores (CSS variables)
-├── proxy.ts                ← Redireciona / para /pt (Next.js 16 substitui middleware)
+├── proxy.ts                ← Redireciona / para /pt
 └── docs/                   ← Spec, plano e documentação adicional
 ```
 
-### Comandos úteis
+### Comandos
 
 ```bash
 npm run dev      # servidor de desenvolvimento (com hot reload)
@@ -514,14 +587,14 @@ npm run lint     # verificar problemas no código
 ### Internacionalização
 
 - O segmento `[lang]` na URL controla o idioma (`/pt/...` ou `/en/...`)
-- O ficheiro `lib/i18n/config.ts` define os idiomas suportados (`LOCALES = ['pt', 'en']`)
-- O proxy (`proxy.ts`) redireciona automaticamente `/` para `/pt`
+- `lib/i18n/config.ts` define os idiomas suportados
+- O proxy (`proxy.ts`) redireciona `/` para `/pt`
 - Todas as strings traduzíveis vivem em `content/ui/{pt,en}.json` e `content/site/{pt,en}.json`
 
 ### SEO
 
 - Cada página tem metadata própria (título, descrição, OG image)
-- `hreflang` configurado em todas as páginas para indexação bilingue correta
+- `hreflang` configurado em todas as páginas para indexação bilingue
 - Sitemap gerado automaticamente em `/sitemap.xml`
 - OG image dinâmica por idioma em `/<lang>/opengraph-image`
 

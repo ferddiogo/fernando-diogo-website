@@ -4,80 +4,101 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import type { UIDict } from '@/lib/i18n/dictionary';
 
-type Status = 'idle' | 'submitting' | 'success' | 'error';
+type Props = {
+  dict: UIDict;
+  recipientEmail: string;
+};
 
-export function ContactForm({ dict }: { dict: UIDict }) {
+type Status = 'idle' | 'opened';
+
+export function ContactForm({ dict, recipientEmail }: Props) {
   const [status, setStatus] = useState<Status>('idle');
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!formspreeId) {
-      setStatus('error');
-      return;
-    }
     const form = e.currentTarget;
     const fd = new FormData(form);
-    setStatus('submitting');
-    try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
-        method: 'POST',
-        body: fd,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
-        setStatus('success');
-        form.reset();
-      } else {
-        setStatus('error');
-      }
-    } catch {
-      setStatus('error');
-    }
+
+    const name = String(fd.get('name') ?? '').trim();
+    const email = String(fd.get('email') ?? '').trim();
+    const projectTypeKey = String(fd.get('projectType') ?? '');
+    const message = String(fd.get('message') ?? '').trim();
+
+    const typeLabel =
+      projectTypeKey && projectTypeKey in dict.form.typeOptions
+        ? dict.form.typeOptions[projectTypeKey as keyof typeof dict.form.typeOptions]
+        : '';
+
+    const subject = typeLabel ? `[${typeLabel}] ${name}` : `Contacto — ${name}`;
+    const body = `${message}\n\n—\n${name}\n${email}`;
+
+    const mailto = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    setStatus('opened');
   }
 
-  if (status === 'success') {
+  if (status === 'opened') {
+    const isPt = dict.form.name === 'Nome';
     return (
       <div className="bg-bg-elev rounded-2xl p-8 border border-line">
-        <p className="font-display text-2xl">{dict.buttons.sent}</p>
-        <p className="mt-2 text-ink-muted">
-          {dict.form.name === 'Nome' ? 'Recebi a tua mensagem. Respondo em 24h.' : 'I got your message. Reply within 24 hours.'}
+        <p className="font-display text-2xl">
+          {isPt ? 'Cliente de email aberto' : 'Email client opened'}
         </p>
+        <p className="mt-2 text-ink-muted">
+          {isPt
+            ? 'Revê a mensagem no teu cliente de email e clica em enviar para finalizar.'
+            : 'Review the message in your email client and hit send to finish.'}
+        </p>
+        <button
+          onClick={() => setStatus('idle')}
+          className="mt-4 text-sm text-accent hover:text-accent-hover underline underline-offset-4"
+        >
+          {isPt ? 'Escrever outra mensagem' : 'Write another message'}
+        </button>
       </div>
     );
   }
 
-  const inputCls = 'w-full px-4 py-3 bg-bg-elev border border-line rounded-lg focus:outline-none focus:border-steel transition-colors';
+  const inputCls =
+    'w-full px-4 py-3 bg-bg-elev border border-line rounded-lg focus:outline-none focus:border-steel transition-colors';
 
   return (
     <form onSubmit={onSubmit} className="space-y-5">
-      <input type="text" name="_gotcha" className="hidden" tabIndex={-1} />
       <div>
-        <label className="block text-xs tracking-[0.18em] uppercase font-display text-ink-soft mb-2">{dict.form.name}</label>
+        <label className="block text-xs tracking-[0.18em] uppercase font-display text-ink-soft mb-2">
+          {dict.form.name}
+        </label>
         <input name="name" required className={inputCls} />
       </div>
       <div>
-        <label className="block text-xs tracking-[0.18em] uppercase font-display text-ink-soft mb-2">{dict.form.email}</label>
+        <label className="block text-xs tracking-[0.18em] uppercase font-display text-ink-soft mb-2">
+          {dict.form.email}
+        </label>
         <input name="email" type="email" required className={inputCls} />
       </div>
       <div>
-        <label className="block text-xs tracking-[0.18em] uppercase font-display text-ink-soft mb-2">{dict.form.type}</label>
-        <select name="projectType" className={inputCls} required>
-          <option value="">—</option>
+        <label className="block text-xs tracking-[0.18em] uppercase font-display text-ink-soft mb-2">
+          {dict.form.type}
+        </label>
+        <select name="projectType" className={inputCls} required defaultValue="">
+          <option value="" disabled>
+            —
+          </option>
           {(Object.entries(dict.form.typeOptions) as [string, string][]).map(([k, v]) => (
-            <option key={k} value={k}>{v}</option>
+            <option key={k} value={k}>
+              {v}
+            </option>
           ))}
         </select>
       </div>
       <div>
-        <label className="block text-xs tracking-[0.18em] uppercase font-display text-ink-soft mb-2">{dict.form.message}</label>
+        <label className="block text-xs tracking-[0.18em] uppercase font-display text-ink-soft mb-2">
+          {dict.form.message}
+        </label>
         <textarea name="message" rows={5} required className={inputCls} />
       </div>
-      {status === 'error' && (
-        <p className="text-sm text-accent">{dict.form.errorGeneric}</p>
-      )}
-      <Button type="submit" variant="primary" size="lg" disabled={status === 'submitting'}>
-        {status === 'submitting' ? dict.buttons.sending : dict.buttons.send}
+      <Button type="submit" variant="primary" size="lg">
+        {dict.buttons.send}
       </Button>
     </form>
   );
