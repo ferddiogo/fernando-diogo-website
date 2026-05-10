@@ -1,0 +1,11 @@
+{
+  "featured": ["torre-helix", "linha-verde-mercado-imobiliario", "casa-mata"],
+  "all": [
+    "torre-helix",
+    "linha-verde-mercado-imobiliario",
+    "casa-mata",
+    "atelier-pinheiros",
+    "indice-velocidade-vendas",
+    "retrofit-vila-buarque"
+  ]
+}
