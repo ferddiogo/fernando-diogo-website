@@ -10,10 +10,10 @@
     }
   },
   "stats": [
-    { "value": "120", "label": "Delivered projects" },
-    { "value": "8",   "label": "Years of practice" },
-    { "value": "32",  "label": "Market dashboards" },
-    { "value": "6",   "label": "Zones mapped (SP)" }
+    { "value": "50", "label": "Delivered projects" },
+    { "value": "3",  "label": "Years of practice" },
+    { "value": "80", "label": "Market dashboards" },
+    { "value": "20", "label": "Zones mapped (SP)" }
   ],
   "dualSpecialty": {
     "title": "Two languages, one gaze.",

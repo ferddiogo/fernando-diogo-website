@@ -33,9 +33,6 @@ export default async function HobbiesPage({ params }: { params: Promise<{ lang: 
   if (!isLocale(lang)) notFound();
   const data = await getHobbies(lang);
 
-  // Bento-style sizing pattern: tall, wide, square, tall, wide, square — covers 6 items
-  const sizes = ['tall', 'wide', 'square', 'tall', 'wide', 'square'] as const;
-
   return (
     <main className="py-20">
       <Container size="wide">
@@ -43,7 +40,7 @@ export default async function HobbiesPage({ params }: { params: Promise<{ lang: 
         <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {data.items.map((hobby, i) => (
             <ScrollReveal key={hobby.slug} delay={(i % 3) * 0.08}>
-              <HobbyCard hobby={hobby} size={sizes[i % sizes.length]} />
+              <HobbyCard hobby={hobby} size="tall" />
             </ScrollReveal>
           ))}
         </div>

@@ -10,10 +10,10 @@
     }
   },
   "stats": [
-    { "value": "120", "label": "Projetos entregues" },
-    { "value": "8",   "label": "Anos de prática" },
-    { "value": "32",  "label": "Dashboards de mercado" },
-    { "value": "6",   "label": "Zonas mapeadas (SP)" }
+    { "value": "50", "label": "Projetos entregues" },
+    { "value": "3",  "label": "Anos de prática" },
+    { "value": "80", "label": "Dashboards de mercado" },
+    { "value": "20", "label": "Zonas mapeadas (SP)" }
   ],
   "dualSpecialty": {
     "title": "Duas linguagens, um olhar.",
