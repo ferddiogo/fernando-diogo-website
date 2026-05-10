@@ -1,0 +1,41 @@
+{
+  "intro": "Off-hours: practices that feed the eye and thinking about cities and forms.",
+  "items": [
+    {
+      "slug": "fotografia-arquitetonica",
+      "title": "Architectural Photography",
+      "description": "Documenting architecture during travels — Lisbon, Brasília, Belo Horizonte, Niterói. Hundreds of photos catalogued by city and typology, from art deco to brut concrete.",
+      "image": "/images/hobbies/photography.jpg"
+    },
+    {
+      "slug": "ciclismo",
+      "title": "Urban Cycling",
+      "description": "Cycling is the best way to read the urban fabric. Each ride reveals a different city.",
+      "image": "/images/hobbies/cycling.jpg"
+    },
+    {
+      "slug": "leitura",
+      "title": "Books on Cities",
+      "description": "Jane Jacobs, Saskia Sassen, Milton Santos. Trying to understand why some cities sing and others only function.",
+      "image": "/images/hobbies/books.jpg"
+    },
+    {
+      "slug": "marcenaria",
+      "title": "Woodworking",
+      "description": "Building small is understanding scale. A table project teaches more about detail than three years of theory.",
+      "image": "/images/hobbies/woodworking.jpg"
+    },
+    {
+      "slug": "viagem",
+      "title": "Typology Travel",
+      "description": "I visit cities not for monuments, but to see how people live. Hanoi, Lisbon, Tokyo, Mexico City.",
+      "image": "/images/hobbies/travel.jpg"
+    },
+    {
+      "slug": "desenho",
+      "title": "Observational Drawing",
+      "description": "Black notebook, pen. Before measuring a space, draw it — the hand catches things the ruler doesn't.",
+      "image": "/images/hobbies/sketching.jpg"
+    }
+  ]
+}
