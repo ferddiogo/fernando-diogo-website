@@ -1,0 +1,31 @@
+:root {
+  /* Backgrounds */
+  --bg-base:     #F5F2ED;
+  --bg-elevated: #FAFAF7;
+  --bg-deep:     #0A0A0A;
+
+  /* Text */
+  --ink-primary: #0A0A0A;
+  --ink-muted:   #6B6B6B;
+  --ink-soft:    #8B8680;
+  --ink-inverse: #FAFAF7;
+
+  /* Accents */
+  --accent:      #FF6B35;
+  --accent-hover:#E55A2B;
+  --steel:       #0F1E3D;
+  --steel-soft:  #1A2D52;
+
+  /* Lines */
+  --line:        #E8E2D6;
+  --line-strong: #D6CDB8;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Type */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+}
