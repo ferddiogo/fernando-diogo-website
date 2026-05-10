@@ -7,13 +7,12 @@ import { pathFor, type Locale } from '@/lib/i18n/config';
 import type { SiteContent } from '@/lib/content/site';
 
 type CardProps = {
-  side: 'left' | 'right';
   accent: 'steel' | 'accent';
   data: { kicker: string; title: string; body: string; cta: string };
   href: string;
 };
 
-function SpecialtyCard({ side, accent, data, href }: CardProps) {
+function SpecialtyCard({ accent, data, href }: CardProps) {
   const kickerClass = accent === 'accent' ? 'text-accent' : 'text-steel';
   const borderHover = accent === 'accent' ? 'hover:border-accent' : 'hover:border-steel';
 
@@ -47,7 +46,6 @@ export function DualSpecialty({ lang, content }: { lang: Locale; content: SiteCo
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           <ScrollReveal delay={0.1}>
             <SpecialtyCard
-              side="left"
               accent="steel"
               data={content.left}
               href={`${pathFor(lang, 'projects')}?category=architecture`}
@@ -55,7 +53,6 @@ export function DualSpecialty({ lang, content }: { lang: Locale; content: SiteCo
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <SpecialtyCard
-              side="right"
               accent="accent"
               data={content.right}
               href={`${pathFor(lang, 'projects')}?category=data-intelligence`}
