@@ -1,19 +1,15 @@
 import { isLocale } from '@/lib/i18n/config';
 import { notFound } from 'next/navigation';
-import { getDictionary } from '@/lib/i18n/dictionary';
+import { getSiteContent } from '@/lib/content/site';
+import { Hero } from '@/components/home/Hero';
 
-export default async function HomePage({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  const dict = await getDictionary(lang);
+  const site = await getSiteContent(lang);
   return (
-    <main className="min-h-screen p-12">
-      <h1 className="font-display text-5xl">{dict.nav.home}</h1>
-      <p className="mt-4 text-ink-muted">Locale: {lang}</p>
+    <main>
+      <Hero lang={lang} content={site.hero} />
     </main>
   );
 }
