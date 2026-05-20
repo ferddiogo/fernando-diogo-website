@@ -1,72 +1,46 @@
 {
   "hero": {
-    "eyebrow": "Perfil",
-    "title": "Estudante de Arquitetura,",
-    "titleAccent": "no cruzamento entre projeto e mercado imobiliário.",
-    "subtitle": "Combino prática projetual com leitura analítica do mercado imobiliário. O CV resume a formação, projetos académicos e ferramentas. Aberto a oportunidades em Portugal e na Europa.",
-    "cvButton": "Descarregar CV",
+    "eyebrow": "Sobre",
+    "title": "Fernando Diogo",
+    "titleAccent": "São José dos Campos - Lisboa",
+    "subtitle": "Sobre",
+    "cvButton": "Portfolio",
     "cvFile": "/cv/fernando-diogo-cv-pt.pdf",
     "cvFilename": "fernando-diogo-cv-pt.pdf"
   },
   "skills": {
-    "eyebrow": "Capacidades",
-    "title": "Ferramentas e métodos.",
-    "description": "O conjunto de software, métodos e disciplinas que uso no dia-a-dia, organizadas por área.",
+    "eyebrow": "Ferramentas",
+    "title": "Ferramentas.",
+    "description": "Softwares e linguagens utilizadas.",
     "categories": [
       {
-        "title": "Arquitetura & Design",
-        "items": ["Revit (BIM)", "AutoCAD", "SketchUp", "Rhinoceros + Grasshopper", "ArchiCAD", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"]
+        "title": "Arquitetura",
+        "items": ["AutoCAD", "SketchUp"]
       },
       {
-        "title": "Visualização 3D",
-        "items": ["Lumion", "V-Ray", "Twinmotion", "Enscape", "D5 Render"]
+        "title": "Urbanismo e Geoprocessamento",
+        "items": ["QGis", "RStudio"]
       },
       {
-        "title": "Dados & Inteligência",
-        "items": ["Power BI", "Excel avançado", "QGIS", "SQL básico", "Modelagem paramétrica", "Análise espacial (isócronas, heatmaps)"]
-      },
-      {
-        "title": "Métodos",
-        "items": ["Estudos de viabilidade", "Análise de mercado imobiliário", "Visualização de dados", "Sustentabilidade & eficiência energética", "Documentação técnica", "Apresentação a clientes"]
+        "title": "Geral",
+        "items": ["Power BI", "Excel"]
       }
     ]
   },
-  "languages": {
-    "eyebrow": "Línguas",
-    "title": "Comunicação.",
-    "items": [
-      { "name": "Português", "level": "Nativo", "proficiency": 100 },
-      { "name": "Inglês",    "level": "Avançado · C1",       "proficiency": 85 },
-      { "name": "Francês",   "level": "Básico · A2",         "proficiency": 35 }
-    ]
-  },
   "education": {
-    "eyebrow": "Trajetória",
-    "title": "Formação e estudos.",
+    "title": "Formação",
     "items": [
       {
-        "period": "2022 — atual",
-        "title": "Licenciatura em Arquitetura",
-        "institution": "Faculdade de Arquitetura",
-        "description": "Em formação. Foco em projeto urbano e tecnologia construtiva."
+        "period": "2024 — atual",
+        "title": "Universidade do Vale do Paraíba UNIVAP",
+        "institution": "Universidade do Vale do Paraíba UNIVAP",
+        "description": "São José do Campos."
       },
       {
-        "period": "2024",
-        "title": "Power BI para Análise Imobiliária",
-        "institution": "Curso intensivo",
-        "description": "Modelagem de dados, DAX, visualização avançada para mercado residencial vertical."
-      },
-      {
-        "period": "2023",
-        "title": "Modelagem Paramétrica com Grasshopper",
-        "institution": "Workshop",
-        "description": "Geração de fachadas responsivas, otimização solar e simulação."
-      },
-      {
-        "period": "2021",
-        "title": "Ensino Secundário",
-        "institution": "Ciências e Tecnologias",
-        "description": "Formação base em matemática, física e desenho."
+        "period": "2026",
+        "title": "Universidade Autónoma de Lisboa UAL",
+        "institution": "Universidade Autónoma de Lisboa UAL",
+        "description": "Erasmus em Lisboa"
       }
     ]
   },
